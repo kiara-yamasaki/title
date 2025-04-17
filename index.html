@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>きあぬのがめす～</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>きあぬのがめす～</h1>
+    <ul id="urlList">
+        <!-- URLがここに追加されます -->
+    </ul>
+
+    <script>
+        const urls = [
+            "https://kiara-yamasaki.github.io/kiara-yamasaki/",
+            "https://kiara-yamasaki.github.io/No2/"
+        ];
+
+        const urlList = document.getElementById('urlList');
+
+        urls.forEach((url, index) => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = url;
+            link.textContent = url; // URL部分のみをリンクにします
+            link.target = "_blank"; // 新しいタブで開く
+
+            // No.の部分をテキストとして追加
+            listItem.textContent = `No.${index + 1} `;
+            listItem.appendChild(link); // リンクをリストアイテムに追加
+            urlList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
